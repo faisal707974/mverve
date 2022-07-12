@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+  --color1 : #d7d7d7;
+  --color2 : #b9b8b6;
+  --color3 : #719638;
+  --color4 : gray;
+  --color5 : black;
+  --color6 : white;
+  --color7 : blue;
+  --color5 : black;
+
+
+
+
+  --color10 : #4C3E79;
+  --color11 : #222222;
+  --color12 : #999999;
+}
+
+
+@font-face {
+  font-family: 'lato_regular';
+  src: url('../public/fonts/Lato-Regular.ttf');
+}
+@font-face {
+  font-family: 'lato_medium';
+  src: url('../public/fonts/Lato-Light.ttf');
+}
+@font-face {
+  font-family: 'lato_semibold';
+  src: url('../public/fonts/Lato-Black.ttf');
+}
+@font-face {
+  font-family: 'lato_bold';
+  src: url('../public/fonts/Lato-Bold.ttf');
+}
+
