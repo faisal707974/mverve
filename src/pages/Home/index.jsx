@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './index.scss'
 import img from '../../images/WebGraphic.png'
+import img2 from '../../images/Mobile – Graphic.png'
 import Input from '../../components/input'
 import { useForm } from 'react-hook-form'
 import icon from '../../images/see_password_icon.png'
@@ -29,6 +30,10 @@ function Home() {
     return (
         <>
             <div className='Home'>
+
+                <div className='TitleLogoMobile'>
+                    <img src={img2} alt="" />
+                </div>
                 <div className='TitleLogo'>
                     <img src={img} alt="" />
                 </div>

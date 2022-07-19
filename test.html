@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS: Using media queries and grid CSS to reflow columns</title>
+    <style>
+        /* Reflow Styling */
+        header[role="banner"] {
+            grid-area: header;
+        }
+
+        main[role="main"] {
+            grid-area: main;
+        }
+
+        aside[role="complementary"] {
+            grid-area: aside;
+        }
+
+        footer[role="contentinfo"] {
+            grid-area: footer;
+        }
+
+        .grid,
+        .subgrid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .grid {
+            grid-template-areas:
+                'header'
+                'main'
+                'aside'
+                'footer';
+            width: 100%;
+        }
+
+        .subgrid {
+            width: calc(100% + 2rem);
+            margin: 0 -1rem;
+        }
+
+        .grid-item,
+        .subgrid-item {
+            padding: 1rem;
+        }
+
+        @media all and (min-width: 576px) {
+            .subgrid {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                margin-bottom: 1rem;
+            }
+
+            .subgrid-item {
+                padding-bottom: 0.25rem;
+            }
+        }
+
+        @media all and (min-width: 992px) {
+            .grid {
+                grid-template-areas:
+                    'header header header'
+                    'main main aside'
+                    'footer footer footer';
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+            }
+        }
+    </style>
+
+</head>
+
+<body class="grid">
+
+    <header role="banner" class="grid-item " style="background-color: red;">
+        ...
+    </header>
+
+    <main role="main" class="grid-item" style="background-color: green;">
+        ...
+        ...
+        <div class="subgrid" style="background-color: rgb(21, 86, 228);">
+            <div class="subgrid-item" style="background-color: rgb(0, 247, 255);">
+                ...
+            </div>
+            <div class="subgrid-item" style="background-color: rgb(255, 0, 212);">
+                ...
+            </div>
+        </div>
+    </main>
+
+    <aside role="complementary" class="grid-item" style="background-color: rgb(208, 255, 0);">
+        ...
+    </aside>
+
+    <footer role="contentinfo" class="grid-item" style="background-color: rgb(231, 17, 99);">
+        ...
+    </footer>
+
+</body>
+
+</html>
