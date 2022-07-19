@@ -1,7 +1,7 @@
-import React from "react";
-// import './Input.scss'
+import React, { Children } from "react";
+import './index.scss'
 
-export default function Input({ type, label, register, errors, rules, className, placeHolder }) {
+export default function Input({ type, label, register, errors, rules, className, placeHolder, children }) {
     return (
         <>
             <div className="custom-input">
@@ -13,6 +13,7 @@ export default function Input({ type, label, register, errors, rules, className,
                     {errors[label] && errors[label].type === 'min' && <p className="validation-error">{label} should be contain atleast {rules.min} characters</p>}
                     {errors[label] && errors[label].type === 'pattern' && <p className="validation-error">Invalid format</p>} */}
                 {/* </Form.Group> */}
+                {children}
             </div>
         </>
     )

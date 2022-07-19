@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './index.scss'
 import img from '../../images/WebGraphic.png'
-import img2 from '../../images/Mobile – Graphic.png'
+import img2 from '../../images/MobileGraphic.png'
 import Input from '../../components/input'
 import { useForm } from 'react-hook-form'
 import icon from '../../images/see_password_icon.png'
@@ -61,13 +61,15 @@ function Home() {
                             />
                             <Input type={pwdView ? 'text' : 'password'} label={'Password'} className='password' register={register} errors={errors}
                                 rules={{ required: true, pattern: { value: /^[0-9a-zA-Z]{8}$/, message: 'should contain 8 characters' } }}
-                            />
+                            >
+                                <img className='eyeIcons icon2' src={icon} alt="" onClick={togglePwdView} />
+                            </Input>
                             <Input type={cnfPwdView ? 'text' : 'password'} label={'confirmPassword'} className='confirm' register={register} errors={errors}
                                 rules={{ required: true, pattern: { value: /^[0-9a-zA-Z]{8}$/, message: 'should contain 8 characters' } }}
-                            />
+                            >
+                                <img className='eyeIcons icon1' src={icon} alt="" onClick={toggleCnfPwdView} />
+                            </Input>
                         </div>
-                        <img className='eyeIcons icon1' src={icon} alt="" onClick={toggleCnfPwdView} />
-                        <img className='eyeIcons icon2' src={icon} alt="" onClick={togglePwdView} />
 
                         <div className='buttons'>
                             <button className='reset'>Reset</button>
